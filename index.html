@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>K-OS Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    /* HERO */
+    .hero {
+      padding: 80px 60px;
+    }
+
+    .hero small {
+      letter-spacing: 3px;
+      font-size: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 90px;
+      line-height: 1.1;
+      margin-top: 20px;
+    }
+
+    .pink {
+      color: #ff4db8;
+    }
+
+    .divider {
+      height: 4px;
+      background: #2a0f17;
+      margin: 40px 0;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#e8d3da;
+      color:#2a0f17;
+    }
+
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      padding:30px 60px;
+      border-bottom: 2px solid #2a0f17 ;
+    }
+
+    .logo{font-size:22px;font-weight:600}
+    .logo span{color:#00c853}
+
+    .nav a{
+      margin-left:40px;
+      text-decoration:none;
+      color:#2a0f17;
+      letter-spacing:2px;
+      font-size:14px;
+    }
+
+    /* MAIN SPLIT LAYOUT */
+    .main{
+      display:grid;
+      grid-template-columns: 1fr 1.2fr;
+      min-height:80vh;
+      /* border-top:2px solid #2a0f17; */
+    }
+
+    /* LEFT SIDE INFO */
+    .left{
+      padding:60px;
+    }
+
+    .left h1{
+      font-family:'Playfair Display',serif;
+      font-size:40px;
+      margin:10px 0 40px;
+    }
+
+    .left small{
+      letter-spacing:3px;
+      font-size:12px;
+    }
+
+    .left p{margin-top:20px;line-height:1.6}
+
+    /* RIGHT FULL CARD */
+    .right{
+      border:2px solid #2a0f17;
+      background:#f3e3e8;
+      padding:60px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .form-group{
+      margin-bottom:40px;
+    }
+
+    .form-group label{
+      display:block;
+      font-size:12px;
+      letter-spacing:3px;
+      margin-bottom:10px;
+    }
+
+    .form-group input,
+    .form-group textarea{
+      width:100%;
+      border:none;
+      border-bottom:2px solid #2a0f17;
+      background:transparent;
+      padding:10px 0;
+      font-size:16px;
+      outline:none;
+    }
+
+    textarea{height:120px;resize:none}
+
+    .btn{
+      margin-top:40px;
+      padding:18px;
+      background:#2a0f17;
+      color:white;
+      text-align:center;
+      letter-spacing:2px;
+      cursor:pointer;
+    }
+
+
+    /* FIGMA WORK SECTION */
+    .figma{
+      padding:80px 60px;
+  scroll-margin-top: 100px;
+      /* border-top:2px solid #2a0f17; */
+    }
+
+    .figma small{
+      letter-spacing:3px;
+      font-size:12px;
+    }
+
+    .figma-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:30px;
+      margin-top:40px;
+    }
+
+    /* Card */
+.figma-card{
+  border:2px solid #2a0f17;
+  overflow:hidden;
+}
+
+.figma-card img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+}
+
+.figma-card span{
+  display:block;
+  padding:15px;
+  font-size:12px;
+  letter-spacing:2px;
+}
+
+/* Link below */
+.figma-link{
+  margin-top:10px;
+  font-size:12px;
+  letter-spacing:2px;
+  text-decoration:none;
+  color:#2a0f17;
+}
+
+/* Hover */
+.figma-link:hover{
+  text-decoration:underline;
+}
+
+      /* PHOTO STACK CARD */
+    .card-section {
+      padding: 80px 60px;
+    }
+
+    .stack-card {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      margin-top: 40px;
+    }
+
+    .stack-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 3px solid #2a0f17;
+      position: absolute;
+      transition: 0.4s ease;
+    }
+
+    .stack-card img:nth-child(1) {
+      z-index: 3;
+      transform: translate(0,0);
+    }
+
+    .stack-card img:nth-child(2) {
+      z-index: 2;
+      transform: translate(15px, 15px);
+      opacity: 0.7;
+    }
+
+    .stack-card img:nth-child(3) {
+      z-index: 1;
+      transform: translate(30px, 30px);
+      opacity: 0.4;
+    }
+
+    /* Hover effect */
+    .stack-card:hover img:nth-child(1) {
+      transform: translate(-10px, -10px);
+    }
+
+    .stack-card:hover img:nth-child(2) {
+      transform: translate(10px, 10px);
+    }
+
+    .stack-card:hover img:nth-child(3) {
+      transform: translate(25px, 25px);
+    }
+
+    .figma-card{
+      border:2px solid #2a0f17;
+      height:180px;
+      display:flex;
+      align-items:end;
+      padding:15px;
+      font-size:12px;
+      letter-spacing:2px;
+    }
+
+    .about{
+  display:grid;
+  grid-template-columns: 1fr 1.2fr;
+  border-top:2px solid #2a0f17;
+  padding:80px 60px;
+  gap:60px;
+  align-items:center;
+}
+
+.about-left small{
+  letter-spacing:3px;
+  font-size:12px;
+}
+
+.about-left h2{
+  font-family:'Playfair Display',serif;
+  font-size:50px;
+  margin:20px 0;
+}
+
+.about-left p{
+  margin-top:15px;
+  line-height:1.6;
+}
+
+/* VIDEO SIDE */
+.about-right{
+  height:400px; /* control overall height */
+  overflow:hidden;
+}
+.about-right video{
+  width:100%;
+  height: 100%;
+  object-fit:cover;
+  border:2px solid #2a0f17;
+}
+
+    /* FOOTER CTA */
+    .footer{
+      /* border-top:2px solid #2a0f17; */
+      padding:60px;
+    }
+
+    .footer small{letter-spacing:3px}
+
+    .footer h2{
+      font-family:'Playfair Display',serif;
+      font-size:70px;
+    }
+
+    .footer-info{
+  display:flex;
+  gap:60px;
+  margin-top:40px;
+  font-size:14px;
+  letter-spacing:1px;
+}
+
+.footer-info p{
+  opacity:0.8;
+}
+
+    .pink{color:#ff4db8}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .main{grid-template-columns:1fr}
+      .right{border-left:none;border-top:2px solid #2a0f17}
+      .figma-grid{grid-template-columns:1fr 1fr}
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="nav">
+    <div class="logo">Hi,y'all <3 <span>.</span></div>
+    <div>
+      <a href="#work">WORK</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact" style="color:#00c853">CONTACT</a>
+    </div>
+  </div>
+
+
+    <!-- HERO -->
+  <section class="hero">
+
+    <h1>
+      SEND SOME <span class="pink">LOVE</span><br>
+      LET'S CONNECT.
+    </h1>
+
+    <div class="divider"></div>
+  </section>
+
+  <!-- MAIN CONTACT LAYOUT -->
+<section class="main">
+
+  <!-- LEFT: PHOTO STACK -->
+  <div class="left">
+    <div class="stack-card">
+      <img src="image/me2.jpeg">
+      <img src="image/me3.jpeg">
+      <img src="image/me.jpeg">
+    </div>
+  </div>
+
+  <!-- RIGHT: FULL FORM CARD -->
+  <div class="right">
+
+  <form onsubmit="location.reload(); return false;">
+
+    <div class="form-group">
+      <label>YOUR NAME</label>
+      <input type="text" required>
+    </div>
+
+    <div class="form-group">
+      <label>EMAIL</label>
+      <input type="email" required>
+    </div>
+
+    <div class="form-group">
+      <label>PROJECT</label>
+      <input type="text">
+    </div>
+
+    <div class="form-group">
+      <label>MESSAGE</label>
+      <textarea></textarea>
+    </div>
+
+    <button type="submit" class="btn">SEND LOVE →</button>
+
+  </form>
+
+</div>
+
+</section>
+
+  </section>
+
+  <!-- FIGMA WORK LINKS -->
+  <section class="figma" id="work">
+    <small>FIGMA WORKS</small>
+
+    <div class="figma-grid">
+
+  <div class="figma-item">
+    <div class="figma-card">
+      <img src="image/project1.jpg" alt="Project 1">
+      
+    </div>
+    <a href="https://www.figma.com/design/cNqShKDBewTfmCqPjQtfPA/Untitled?node-id=0-1&p=f&t=PWCym1WOoMKzbq0W-0" target="_blank" class="figma-link">
+      View Project ↗
+    </a>
+  </div>
+
+  <div class="figma-item">
+    <div class="figma-card">
+      <img src="image/project2.png" alt="Project 2">
+      
+    </div>
+    <a href="https://www.figma.com/design/chqMIKxNGiPSUH4AvGY8DG/Untitled?node-id=1-2&t=PWCym1WOoMKzbq0W-0" target="_blank" class="figma-link">
+      View Project ↗
+    </a>
+  </div>
+
+  <div class="figma-item">
+    <div class="figma-card">
+      <img src="image/project3.jpg" alt="Project 3">
+    
+    </div>
+    <a href="https://www.figma.com/design/UhkhbuTtDWx5j22PHPqZje/Untitled?t=PWCym1WOoMKzbq0W-0" target="_blank" class="figma-link">
+      View Project ↗
+    </a>
+  </div>
+
+  <div class="figma-item">
+    <div class="figma-card">
+      <img src="image/project4.jpg" alt="Project 4">
+    </div>
+    <a href="https://www.figma.com/design/gQcHYQAgX72y3wycRiwSB3/Untitled?t=PWCym1WOoMKzbq0W-0" target="_blank" class="figma-link">
+      View Project ↗
+    </a>
+  </div>
+
+</div>
+
+   <div class="divider"></div>
+  </section>
+
+  <section class="about" id="about">
+
+  <!-- LEFT: TEXT -->
+  <div class="about-left">
+    <small>ABOUT ME</small>
+    <h2>I design experiences that feel <span class="pink">human</span>.</h2>
+    
+    <p>
+      I love pretty things from nature to architecture and i love things that are inspired by it. I am creative in the
+      most natural way possible atleast that's how i like to think of myself. And i also have two meow that i love, 
+      <span class="pink">don't forget to say hi to them </span>.
+    </p>
+
+    <p>
+      Currently exploring design systems, and interactive storytelling.
+    </p>
+  </div>
+
+  <!-- RIGHT: VIDEO -->
+  <div class="about-right">
+    <video autoplay muted loop playsinline>
+      <source src="image/meow.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+  </div>
+
+</section>
+
+  <div class="divider"></div>
+  </section>
+
+
+  <!-- FOOTER CTA -->
+  <section class="footer">
+    <small>GOT SOMETHING LOUD TO DESIGN?</small>
+    <h2>LET’S <span class="pink">Prettify</span> THINGS</h2>
+
+    <div class="footer-info" id="contact">
+    <p>Lisa Shrestha</p>
+    <p>lisashrestha032@gmail.com</p>
+    <p>My Workplace</p>
+  </div>
+  </section>
+
+</body>
+</html>
